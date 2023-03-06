@@ -8,9 +8,7 @@ const HomeLogo = styled.img`
   max-width: 210.32px;
 `
 const NavContainer = styled.nav`
-  padding-top: 40px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 40px 100px 65px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;

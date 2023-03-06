@@ -5,8 +5,6 @@ import { ErrorLink } from '../../utils/StyledLink'
 
 const ErrorWrapper = styled.div`
   margin-top: 185px;
-  max-width: 1440px;
-  max-height: 1024px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +27,7 @@ const Illustration = styled.img`
   max-width: 597px;
   max-height: 263px;
 `
-// REDIRECTION NON FONCTIONNEL !!!!!
+
 function Error() {
   return (
     <ErrorWrapper>
