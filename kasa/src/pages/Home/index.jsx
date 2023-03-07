@@ -2,7 +2,8 @@ import colors from '../../utils/colors'
 import styled from 'styled-components'
 import HomeBG from '../../assets/homeBG.png'
 import Card from '../../components/Card'
-import accomodationData from '../../datas/logements.json'
+import { useFetch } from '../../utils/Hooks'
+import { Link } from 'react-router-dom'
 
 const HomeWrapper = styled.div`
   padding-left: 100px;
@@ -44,9 +45,16 @@ const GalleryContainer = styled.div`
 `
 
 function Home() {
-  const { data, error } = useFetch(
+  const { data, isLoading, error } = useFetch(
     `https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json`
   )
+
+  const accomodationsList = data?.accomodationsList
+  console.log(accomodationsList)
+
+  if (error) {
+    return <span>Il y a un problème !</span>
+  }
 
   return (
     <HomeWrapper>
@@ -54,7 +62,14 @@ function Home() {
         <BannerTitle>Chez vous, partout et ailleurs</BannerTitle>
       </BannerContainer>
       <GalleryContainer>
-        <Card />
+        {accomodationsList?.map((accomodation) => (
+          <Link
+            key={`accomodation-${accomodation.id}`}
+            to={`/accomodation/${accomodation.id}`}
+          >
+            <Card title={accomodation.title} picture={accomodation.cover} />
+          </Link>
+        ))}
       </GalleryContainer>
     </HomeWrapper>
   )

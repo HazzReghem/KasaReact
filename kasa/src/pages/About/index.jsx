@@ -1,6 +1,6 @@
 import colors from '../../utils/colors'
 import styled from 'styled-components'
-import AboutBG from '../../assets/aboutBG.png'
+import AboutBG from '../../assets/about_BG.png'
 
 const AboutWrapper = styled.div`
   padding-left: 100px;
