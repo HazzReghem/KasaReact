@@ -24,7 +24,7 @@
 
   @include tabletMinBreakPoint {
     margin: auto;
-    width: $screen-tablet;
+    width: 100%;
     margin-top: 40px;
 
     p {
@@ -33,7 +33,7 @@
   }
 
   @include laptopMinBreakPoint {
-    width: $screen-laptop;
+    width: 100%;
   }
 
   @include largeMinBreakPoint {
